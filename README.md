@@ -53,12 +53,52 @@ flat_10x10_x_py = read_mcc_6x_10x10["CROSSPLANE_PROFILE"]["Flatness"]
 
 A complete mcc_dict can looks like this (here electrons, 20 x 20 cm²):
 
-{'PDD': {'Type': 'PDD', 'R80': 19.986482881280565, 'R50': {'R50 (DIN)': 24.940544317729188, 'R50': 23.788279990789775}, 'Rp': 29.794591153821518}, 
-'INPLANE_PROFILE': {'Type': 'INPLANE_PROFILE', 'CaxDev': 0.3168300690775254, 'FWHM': {'fwhm (nominal)': 204.02442621763075, 'fwhm': 201.42603042514637}, 'Flatness': 1.9405358627975489, 'Symmetry': 0.9219008965810869}, 
-'CROSSPLANE_PROFILE': {'Type': 'CROSSPLANE_PROFILE', 'CaxDev': 0.49851535225756294, 'FWHM': {'fwhm (nominal)': 203.39409918216086, 'fwhm': 200.8037310515953}, 'Flatness': 1.6065593462425587, 'Symmetry': -0.2758778417071142}}
+```python
+{
+    "PDD": {
+        "Type": "PDD",
+        "R80": 19.986482881280565,
+        "R50": {
+            "R50 (DIN)": 24.940544317729188,
+            "R50": 23.788279990789775
+        },
+        "Rp": 29.794591153821518
+    },
+    "INPLANE_PROFILE": {
+        "Type": "INPLANE_PROFILE",
+        "CaxDev": 0.3168300690775254,
+        "FWHM": {
+            "fwhm (nominal)": 204.02442621763075,
+            "fwhm": 201.42603042514637
+        },
+        "Flatness": 1.9405358627975489,
+        "Symmetry": 0.9219008965810869
+    },
+    "CROSSPLANE_PROFILE": {
+        "Type": "CROSSPLANE_PROFILE",
+        "CaxDev": 0.49851535225756294,
+        "FWHM": {
+            "fwhm (nominal)": 203.39409918216086,
+            "fwhm": 200.8037310515953
+        },
+        "Flatness": 1.6065593462425587,
+        "Symmetry": -0.2758778417071142
+    }
+}
+```
 
 For a single photon pdd the dict contains the following:
-{'PDD': {'Type': 'PDD', 'Q Index': 0.6671976734598629, 'Surface Dose': 47.71301033726637, 'D100': 67.11913960530438, 'D200': 38.52406807977445}}
+```python
+{
+    "PDD": {
+        "Type": "PDD",
+        "Q Index": 0.6671976734598629,
+        "Surface Dose": 47.71301033726637,
+        "D100": 67.11913960530438,
+        "D200": 38.52406807977445
+    }
+}
+```
 
 ### Starcheck
 *File Upload Test: read_mcc_0_6x (macro name)*
@@ -81,4 +121,27 @@ fs_0_y_py = read_mcc_0_6x["INPLANE_PROFILE"]["FWHM"]["fwhm"]
 
 The two diagonals are labeled TLGR_PROFILE and TRGL_PROFILE. The dict from mystar.analyze_diagonal() looks like this:
 
-{'TLGR_PROFILE': {'Type': 'INPLANE_PROFILE', 'CaxDev': -1.7500384951353993, 'FWHM': {'fwhm (nominal)': 276.49675566173937, 'fwhm': 276.49675566173937}, 'Flatness': 2.118534052326748, 'Symmetry': -0.7116183813665132}, 'TRGL_PROFILE': {'Type': 'INPLANE_PROFILE', 'CaxDev': 0.12798456264559377, 'FWHM': {'fwhm (nominal)': 275.69602807162545, 'fwhm': 275.69602807162545}, 'Flatness': 2.20840822848013, 'Symmetry': -0.8215006262255542}}
+```python
+{
+    "TLGR_PROFILE": {
+        "Type": "INPLANE_PROFILE",
+        "CaxDev": -1.7500384951353993,
+        "FWHM": {
+            "fwhm (nominal)": 276.49675566173937,
+            "fwhm": 276.49675566173937
+        },
+        "Flatness": 2.118534052326748,
+        "Symmetry": -0.7116183813665132
+    },
+    "TRGL_PROFILE": {
+        "Type": "INPLANE_PROFILE",
+        "CaxDev": 0.12798456264559377,
+        "FWHM": {
+            "fwhm (nominal)": 275.69602807162545,
+            "fwhm": 275.69602807162545
+        },
+        "Flatness": 2.20840822848013,
+        "Symmetry": -0.8215006262255542
+    }
+}
+```
